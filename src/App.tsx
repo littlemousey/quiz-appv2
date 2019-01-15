@@ -1,9 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+interface IAppProps {
+  test?: string;
+}
+
+interface IAppLocalState {
+ name: string;
+}
+
+class App extends Component<IAppProps,IAppLocalState> {
+
+  state: IAppLocalState = {
+    name: 'Juan'
+  }
+
   render() {
+
     return (
       <div className="App">
         <header className="App-header">
